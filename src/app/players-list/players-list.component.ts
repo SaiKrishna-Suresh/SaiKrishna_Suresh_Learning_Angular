@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-players-list',
   standalone: true,
   imports: [],
-  templateUrl: './content-list.component.html',
-  styleUrl: './content-list.component.css'
+  templateUrl: './players-list.component.html',
+  styleUrl: './players-list.component.css'
 })
-export class ContentListComponent {
+export class PlayersListComponent {
 
 }
