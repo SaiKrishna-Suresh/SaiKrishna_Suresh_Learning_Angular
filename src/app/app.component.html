@@ -1,5 +1,11 @@
-<html>
-<title>SaiKrishna Suresh Angular Learning</title>
-<p>my name is {{firstName}} {{LastName}} </p>
-<p>my age is {{age}} </p>
-</html>
+
+<div class="container">
+  <h2>WORLD'S TOP 5 BATSMAN</h2>
+  <div *ngFor="let player of player1">
+    <h3>{{player.firstName}} {{player.lastName}}</h3>
+    <p>Rank:{{player.rank}}</p>
+    <p>Country:{{player.country}}</p>
+    <p>Average:{{player.average}}</p>
+  </div>
+
+</div>
