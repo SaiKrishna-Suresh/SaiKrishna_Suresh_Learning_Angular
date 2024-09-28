@@ -6,3 +6,11 @@
 h2{
   font-size: 2em;
 }
+.even-item{
+  background-color: pink;
+}
+.odd-item{
+  background-color: teal;
+}
+
+

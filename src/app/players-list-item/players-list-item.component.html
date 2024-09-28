@@ -1,5 +1,5 @@
 <h2>Ranking: {{player.rank}}</h2>
-<div class="list">
+<div [ngClass]="{'even-item': even, 'odd-item': !even}" class="list">
   <h3>{{ player.firstName }} {{ player.lastName }}</h3>
   <p>Country: {{ player.country }}</p>
   <p>Average: {{ player.average }}</p>

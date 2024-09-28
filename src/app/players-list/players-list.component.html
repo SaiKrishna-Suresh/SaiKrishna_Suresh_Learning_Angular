@@ -1,5 +1,8 @@
 <div>
-  <ng-container *ngFor="let player of players">
-    <app-players-list-item [player]="player"></app-players-list-item>
+  <ng-container *ngFor="let player of players; let i= index">
+
+    <app-players-list-item
+      [player]="player"
+      [even]="i%2==0"></app-players-list-item>
   </ng-container>
 </div>

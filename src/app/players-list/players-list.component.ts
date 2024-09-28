@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import {Players} from "../Shared/Models/Players";
 import {PlayersListItemComponent} from "../players-list-item/players-list-item.component";
-import { NgIf, NgForOf } from '@angular/common';
+import {NgIf, NgForOf, NgClass} from '@angular/common';
 @Component({
   selector: 'app-players-list',
   standalone: true,
   imports: [
-    PlayersListItemComponent,NgIf, NgForOf,
+    PlayersListItemComponent, NgIf, NgForOf, NgClass,
   ],
   templateUrl: './players-list.component.html',
   styleUrl: './players-list.component.css'
