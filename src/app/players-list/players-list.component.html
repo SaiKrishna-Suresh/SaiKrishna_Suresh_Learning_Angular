@@ -1,6 +1,5 @@
 <div>
-  <app-players-list-item [player]= "players[0]"></app-players-list-item>
-  <app-players-list-item [player] ="players[1]"></app-players-list-item>
-  <app-players-list-item [player] ="players[2]"></app-players-list-item>
-  <app-players-list-item [player] ="players[3]"></app-players-list-item>
+  <ng-container *ngFor="let player of players">
+    <app-players-list-item [player]="player"></app-players-list-item>
+  </ng-container>
 </div>
