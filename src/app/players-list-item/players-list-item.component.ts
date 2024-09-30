@@ -10,6 +10,6 @@ import {NgIf, NgForOf, NgClass} from '@angular/common';
   styleUrl: './players-list-item.component.css'
 })
 export class PlayersListItemComponent {
-@Input() player!:Players;
-@Input() even!: boolean;
+@Input() player?:Players;
+@Input() even?: boolean;
 }
