@@ -14,12 +14,41 @@ import {CricketPlayerService} from "../Services/cricket-player.service";
 })
 export class PlayersListComponent implements OnInit {
   players: Players[] = [];
+  selectedPlayer?:Players;
 
   constructor(private cricketPlayerService: CricketPlayerService) {}
     ngOnInit():void {
+      this.loadAllPlayers();
+    }
+    loadAllPlayers():void{
     this.cricketPlayerService.getAllPlayers().subscribe((data:Players[])=>{
       this.players=data;
       });
     }
+    addPlayer(newPlayer:Players):void{
+    this.cricketPlayerService.addPlayer(newPlayer).subscribe((updatedPlayers: Players[])=>{
+      this.players = updatedPlayers;
+    });
+    }
+    updatePlayer(updatedPlayer:Players):void{
+    this.cricketPlayerService.updatePlayer(updatedPlayer).subscribe((updatedPlayer: Players[])=>{
+      this.players= updatedPlayer;
+      });
+    }
+    deletePlayer(id: number):void{
+    this.cricketPlayerService.deletePlayer(id).subscribe((removedPlayer)=>{
+      if(removedPlayer){
+        this.loadAllPlayers();
+      }
+    });
+    }
+    getPlayerById(id: number):void{
+    this.cricketPlayerService.getPlayerById(id).subscribe((player)=>{
+      if(player){
+        this.selectedPlayer=player;
+      }
+    });
+    }
+
 
 }
