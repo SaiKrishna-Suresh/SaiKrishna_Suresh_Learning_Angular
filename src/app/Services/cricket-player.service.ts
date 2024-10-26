@@ -6,6 +6,7 @@ import {observable, Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
+
 })
 export class CricketPlayerService {
   private playersList: Players[] = MOCK_CONTENT;
