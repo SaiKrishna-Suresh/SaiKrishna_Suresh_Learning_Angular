@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 import {Players} from "./Shared/Models/Players";
 import { NgForOf } from '@angular/common';
 import {PlayersListComponent} from "./players-list/players-list.component";
@@ -9,7 +9,7 @@ import {PlayersListItemComponent} from "./players-list-item/players-list-item.co
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, PlayersListComponent, PlayersListItemComponent],
+  imports: [RouterOutlet, NgForOf, PlayersListComponent, PlayersListItemComponent, RouterLink],
   templateUrl: './app.component.html',
   styleUrls:[ './app.component.css']
 })

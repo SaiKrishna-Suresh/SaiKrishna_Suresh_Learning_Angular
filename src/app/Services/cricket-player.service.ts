@@ -27,18 +27,19 @@ export class CricketPlayerService {
   }
   updatePlayer(updatedPlayer:Players):Observable<Players[]>{
     const index = this.playersList.findIndex(p=>p.rank==updatedPlayer.rank);
-    if(index!==-1){
+    if(index > -1){
       this.playersList[index] = updatedPlayer;
 
     }
     return of(this.playersList);
   }
-  deletePlayer(id:number):Observable<Players | undefined >{
+  deletePlayer(id:number):Observable<boolean>{
     const index = this.playersList.findIndex(p=>p.rank===id);
-    let removedPlayer;
-    if(index!==1){
-      removedPlayer = this.playersList.splice(index,1)[0];
+
+    if(index >-1){
+      this.playersList.splice(index,1);
+      return of(true);
     }
-    return of(removedPlayer);
+    return of(false);
   }
 }
