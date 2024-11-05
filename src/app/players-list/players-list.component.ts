@@ -3,7 +3,7 @@ import { Players } from "../Shared/Models/Players";
 import { PlayersListItemComponent } from "../players-list-item/players-list-item.component";
 import { NgIf, NgForOf, NgClass } from '@angular/common';
 import { CricketPlayerService } from "../Services/cricket-player.service";
-import { Router } from '@angular/router'; // Import Router for navigation
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-players-list',
@@ -12,14 +12,14 @@ import { Router } from '@angular/router'; // Import Router for navigation
     PlayersListItemComponent, NgIf, NgForOf, NgClass,
   ],
   templateUrl: './players-list.component.html',
-  styleUrls: ['./players-list.component.css'] // Fixed to styleUrls
+  styleUrls: ['./players-list.component.css']
 })
 export class PlayersListComponent implements OnInit {
   players: Players[] = [];
 
   constructor(
     private cricketPlayerService: CricketPlayerService,
-    private router: Router // Inject Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -39,12 +39,12 @@ export class PlayersListComponent implements OnInit {
   }
 
   editPlayer(player: Players): void {
-    this.router.navigate(['/modify-list-item', player.rank]); // Use the appropriate route
+    this.router.navigate(['/modify-list-item', player.rank]);
   }
 
   deletePlayer(id: number): void {
     this.cricketPlayerService.deletePlayer(id).subscribe(() => {
-      this.loadAllPlayers(); // Refresh the list after deletion
+      this.loadAllPlayers();
     });
   }
 }
