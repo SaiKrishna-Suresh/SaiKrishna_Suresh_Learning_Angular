@@ -8,7 +8,7 @@ export const MOCK_CONTENT: Players[] = [
     lastName: 'Kohli',
     country: 'India',
     average: 55.5,
-    image:'assets/images/virat.jpg',
+    image:'images/virat.jpg',
 
   },
   {
@@ -17,7 +17,7 @@ export const MOCK_CONTENT: Players[] = [
     lastName: 'Smith',
     country: 'Australia',
     average:45.5,
-    image:'assets/images/stevesmith.jpg'
+    image:'images/stevesmith.jpg'
 
   },
   {
@@ -26,7 +26,7 @@ export const MOCK_CONTENT: Players[] = [
     lastName:'Willaimson',
     country:'New Zealand',
     average:44.3,
-    image:'assets/images/kanewilliamson.jpg',
+    image:'images/kanewilliamson.jpg',
 
   },
 
