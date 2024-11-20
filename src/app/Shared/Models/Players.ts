@@ -4,4 +4,6 @@ export interface Players{
   lastName: string;
   country: string;
   average?: number;
+  image:string;
+
 }
