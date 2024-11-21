@@ -3,6 +3,7 @@ import {Players} from "../Shared/Models/Players";
 import {PlayersListItemComponent} from "../players-list-item/players-list-item.component";
 import {NgIf, NgForOf, NgClass, NgOptimizedImage} from '@angular/common';
 import {CricketPlayerService} from "../Services/cricket-player.service";
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-players-list',
   standalone: true,
@@ -16,7 +17,7 @@ export class PlayersListComponent implements OnInit {
   players: Players[] = [];
   selectedPlayer?:Players;
 
-  constructor(private cricketPlayerService: CricketPlayerService) {}
+  constructor(private cricketPlayerService: CricketPlayerService,private router:Router) {}
     ngOnInit():void {
       this.loadAllPlayers();
     }
@@ -49,6 +50,7 @@ export class PlayersListComponent implements OnInit {
       }
     });
     }
-
-
+    editPlayer(player:Players):void{
+    this.router.navigate(['/modify'],{queryParams:{rank:player.rank}});
+    }
 }

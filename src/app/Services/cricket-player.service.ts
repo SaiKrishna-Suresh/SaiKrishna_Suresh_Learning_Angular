@@ -36,7 +36,7 @@ export class CricketPlayerService {
   deletePlayer(id:number):Observable<Players | undefined >{
     const index = this.playersList.findIndex(p=>p.rank===id);
     let removedPlayer;
-    if(index!==1){
+    if(index !== -1){
       removedPlayer = this.playersList.splice(index,1)[0];
     }
     return of(removedPlayer);
