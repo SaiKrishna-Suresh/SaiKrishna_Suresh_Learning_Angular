@@ -1,14 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {Players} from "../Shared/Models/Players";
 import {PlayersListItemComponent} from "../players-list-item/players-list-item.component";
-import {NgIf, NgForOf, NgClass, NgOptimizedImage} from '@angular/common';
+import {NgIf, NgForOf, NgClass, NgOptimizedImage, DatePipe, UpperCasePipe, CurrencyPipe} from '@angular/common';
 import {CricketPlayerService} from "../Services/cricket-player.service";
 import {Router} from "@angular/router";
+import {FullNamePipe} from "../full-name.pipe";
 @Component({
   selector: 'app-players-list',
   standalone: true,
   imports: [
-    PlayersListItemComponent, NgIf, NgForOf, NgClass,NgOptimizedImage
+    PlayersListItemComponent, NgIf, NgForOf, NgClass, NgOptimizedImage, FullNamePipe, DatePipe, UpperCasePipe, CurrencyPipe
   ],
   templateUrl: './players-list.component.html',
   styleUrl: './players-list.component.css'
