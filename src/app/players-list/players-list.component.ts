@@ -5,11 +5,12 @@ import {NgIf, NgForOf, NgClass, NgOptimizedImage, DatePipe, UpperCasePipe, Curre
 import {CricketPlayerService} from "../Services/cricket-player.service";
 import {Router} from "@angular/router";
 import {FullNamePipe} from "../full-name.pipe";
+import {HoverHighlightDirective} from "../hover-highlight.directive";
 @Component({
   selector: 'app-players-list',
   standalone: true,
   imports: [
-    PlayersListItemComponent, NgIf, NgForOf, NgClass, NgOptimizedImage, FullNamePipe, DatePipe, UpperCasePipe, CurrencyPipe
+    PlayersListItemComponent, NgIf, NgForOf, NgClass, NgOptimizedImage, FullNamePipe, DatePipe, UpperCasePipe, CurrencyPipe, HoverHighlightDirective
   ],
   templateUrl: './players-list.component.html',
   styleUrl: './players-list.component.css'

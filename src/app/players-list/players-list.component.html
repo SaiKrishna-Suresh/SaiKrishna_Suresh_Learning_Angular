@@ -3,7 +3,8 @@
 
     <app-players-list-item
       [player]="player"
-      [even]="i%2==0">
+      [even]="i%2==0"
+      [appHoverHighlight]="'blue'" [defaultColor]="'black'">
         <div>
             <p>Full Name:{{{firstName:player.firstName,lastName:player.lastName}|fullName}}</p>
             <p>Debute Date: {{player.debuteDate| date:'longDate'}}</p>
@@ -13,8 +14,8 @@
 
     </app-players-list-item>
       <div>
-          <button (click)="editPlayer(player)">Edit</button>
-          <button (click)="deletePlayer(player.rank)">Delete</button>
+          <button (click)="editPlayer(player)" [appHoverHighlight]="'green'">Edit</button>
+          <button (click)="deletePlayer(player.rank)"[appHoverHighlight]="'yellow'">Delete</button>
       </div>
   </ng-container>
 </div>
