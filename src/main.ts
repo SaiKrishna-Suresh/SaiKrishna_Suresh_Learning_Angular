@@ -7,14 +7,23 @@ import {PlayersListItemComponent} from "./app/players-list-item/players-list-ite
 import {ModifyListItemComponent} from "./app/modify-list-item/modify-list-item.component";
 import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.component";
 
+
 const routes: Routes=[
+  {path:'',redirectTo:'/players',pathMatch:"full"},
   {path:'',component:PlayersListComponent},
   {path: 'players',component: PlayersListComponent},
-  {path:'players/:id',component:PlayersListItemComponent},
-  {path: 'modify', component:ModifyListItemComponent},
-  {path: '**', component:PageNotFoundComponent},
+  {path:'players/:id',
+    loadComponent:()=>
+  import('./app/players-list-item/players-list-item.component').then(m=>m.PlayersListItemComponent)},
+  {path: 'modify',
+    loadComponent:()=>import('./app/modify-list-item/modify-list-item.component').then(m=>m.ModifyListItemComponent)},
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./app/page-not-found/page-not-found.component').then(m => m.PageNotFoundComponent),
+  }
 ];
 bootstrapApplication(AppComponent,{
   providers:[provideRouter(routes)]
 
-}).then(r=>console.log('Bootstrap Successful'));
+}).then(()=>console.log('Bootstrap Successful'));
