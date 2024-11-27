@@ -1,6 +1,7 @@
 {
   "name": "sai-krishna-learning-angular",
   "version": "0.7.0",
+
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
