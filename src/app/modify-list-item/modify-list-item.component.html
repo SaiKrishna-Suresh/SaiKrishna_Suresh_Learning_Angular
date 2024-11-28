@@ -2,23 +2,23 @@
     <form [formGroup]="itemForm"(ngSubmit)="onSubmit()">
         <div>
             <label for ="rank">Rank</label>
-            <input id = "rank" formControlName="rank" type="number"/>
+            <input id = "rank" formControlName="rank" type="number" appHighlightOnFocus [highlightColor]="'magenta'"/>
         </div>
         <div>
             <label for="firstName">First Name</label>
-            <input id="firstName" formControlName="firstName" type="text"/>
+            <input id="firstName" formControlName="firstName" type="text" appHighlightOnFocus [highlightColor]="'green'"/>
         </div>
 
         <div>
 
             <label for="lastName">Last Name</label>
-            <input id="lastName" formControlName="lastName" type="text"/>
+            <input id="lastName" formControlName="lastName" type="text" appHighlightOnFocus [highlightColor]="'blue'"/>
 
 
         </div>
         <div>
             <label for="country">Country</label>
-            <input id="country" formControlName="average" type="number"/>
+            <input id="country" formControlName="average" type="number" appHighlightOnFocus [highlightColor]="'yellow'"/>
         </div>
         <div>
             <button type ="submit">Save</button>

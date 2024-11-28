@@ -4,12 +4,14 @@ import {last} from "rxjs";
 import {Players} from "../Shared/Models/Players";
 import {CricketPlayerService} from "../Services/cricket-player.service";
 import {Router} from "@angular/router";
+import {HighlightOnFocusDirective} from "../highlight-on-focus.directive";
 
 @Component({
   selector: 'app-modify-list-item',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HighlightOnFocusDirective
   ],
   templateUrl: './modify-list-item.component.html',
   styleUrl: './modify-list-item.component.css'
