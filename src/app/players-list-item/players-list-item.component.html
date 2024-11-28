@@ -4,6 +4,9 @@
   <h3>{{player.firstName}}{{player.lastName}}</h3>
    <p>Country:{{player.country}}</p>
   <p>Average:{{player.average}}</p>
+  <p>Debute Date: {{player.debuteDate| date:'longDate' }}</p>
+  <p>Role: {{player.role|uppercase}}</p>
+  <p>Salary:{{player.salary|currency:'CAD'}}</p>
 
   <img [ngSrc]="player.image" width="200" height="200"/>
 
