@@ -3,19 +3,12 @@
 
     <app-players-list-item
       [player]="player"
-      [even]="i%2==0"
-      [appHoverHighlight]="'blue'" [defaultColor]="'black'">
-        <div>
-            <p>Full Name:{{{firstName:player.firstName,lastName:player.lastName}|fullName}}</p>
-            <p>Debute Date: {{player.debuteDate| date:'longDate'}}</p>
-            <p>Role: {{player.role|uppercase}}</p>
-            <p>Salary:{{player.salary|currency:'CAD'}}</p>
-        </div>
+      [even]="i%2===0" [appHoverHighlight]="'blue'" [defaultColor]="'black'">
 
     </app-players-list-item>
-      <div>
-          <button (click)="editPlayer(player)" [appHoverHighlight]="'green'">Edit</button>
-          <button (click)="deletePlayer(player.rank)"[appHoverHighlight]="'yellow'">Delete</button>
+      <div class="actionButtons">
+          <button mat-raised-button color="primary "(click)="editPlayer(player)" [appHoverHighlight]="'green'">Edit</button>
+          <button mat-raised-button color="warn "(click)="deletePlayer(player.rank)"[appHoverHighlight]="'yellow'">Delete</button>
       </div>
   </ng-container>
 </div>

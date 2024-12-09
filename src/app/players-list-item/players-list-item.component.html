@@ -1,11 +1,22 @@
 
 <h2 *ngIf="player">Ranking:{{player.rank}}</h2>
-<div *ngIf="player"[ngClass]="{'even-item':even, 'odd-item':!even}"class="list">
-  <h3>{{player.firstName}}{{player.lastName}}</h3>
-   <p>Country:{{player.country}}</p>
-  <p>Average:{{player.average}}</p>
+<mat-card *ngIf="player"[ngClass]="{'even-item':even, 'odd-item':!even}"class="list">
+
+
+
+  <mat-card-header>{{player.firstName}}{{player.lastName}}</mat-card-header>
+   <mat-card-subtitle>Country:{{player.country}}</mat-card-subtitle>
+  <mat-card-subtitle>Average:{{player.average}}</mat-card-subtitle>
+
+
+  <mat-card-content>
+    <p>Full Name:{{{firstName:player.firstName,lastName:player.lastName}|fullName}}</p>
+    <p>Debute Date: {{player.debuteDate| date:'longDate'}}</p>
+    <p>Role: {{player.role|uppercase}}</p>
+    <p>Salary:{{player.salary|currency:'CAD'}}</p>
+  </mat-card-content>
 
   <img [ngSrc]="player.image" width="200" height="200"/>
 
 
-</div>
+</mat-card>

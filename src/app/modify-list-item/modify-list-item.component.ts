@@ -4,14 +4,23 @@ import {last} from "rxjs";
 import {Players} from "../Shared/Models/Players";
 import {CricketPlayerService} from "../Services/cricket-player.service";
 import {Router} from "@angular/router";
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import {HighlightOnFocusDirective} from "../highlight-on-focus.directive";
+
+
 
 @Component({
   selector: 'app-modify-list-item',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    HighlightOnFocusDirective
+    MatTooltipModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule
   ],
   templateUrl: './modify-list-item.component.html',
   styleUrl: './modify-list-item.component.css'
