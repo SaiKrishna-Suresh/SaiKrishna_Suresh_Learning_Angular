@@ -5,11 +5,12 @@ import { NgForOf } from '@angular/common';
 import {PlayersListComponent} from "./players-list/players-list.component";
 import {CricketPlayerService} from "./Services/cricket-player.service";
 import {PlayersListItemComponent} from "./players-list-item/players-list-item.component";
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, PlayersListComponent, PlayersListItemComponent, RouterLink],
+  imports: [RouterOutlet, NgForOf, PlayersListComponent, PlayersListItemComponent, RouterLink,MatToolbarModule],
   templateUrl: './app.component.html',
   styleUrls:[ './app.component.css']
 })
